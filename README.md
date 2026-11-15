@@ -1,5 +1,5 @@
 ---
-pretty_name: Airplane Crashes and Fatalities Since 1908
+pretty_name: Aviation Dataset
 configs:
 - config_name: default
   data_files:
@@ -11,77 +11,83 @@ configs:
     path: test.parquet
 ---
 
-# Airplane Crashes and Fatalities Since 1908
+# Aviation Dataset
 
 ## Dataset Description
 
-This dataset contains historical information about airplane crashes
-and aviation accidents recorded since 1908.
+This dataset contains aviation-related information collected from multiple publicly available datasets.
 
-It includes information about accident dates, locations, operators,
-aircraft details, people aboard, fatalities, ground fatalities,
-and accident summaries.
+It covers different areas of aviation, including aircraft, airlines, airports, flight operations, aviation accidents, weather information, and aviation reports.
 
-## Dataset Structure
+The dataset was cleaned, processed, and converted into readable text records for AI and Small Language Model (SLM) applications.
 
-The dataset contains 13 columns:
+## Dataset Source
 
-| Column | Description |
-|---|---|
-| Date | Date of the accident |
-| Time | Time of the accident |
-| Location | Accident location |
-| Operator | Airline or aircraft operator |
-| Flight # | Flight number |
-| Route | Flight route |
-| Type | Aircraft type |
-| Registration | Aircraft registration |
-| cn/In | Aircraft construction number or identification |
-| Aboard | Total people aboard |
-| Fatalities | Number of fatalities aboard |
-| Ground | Ground fatalities |
-| Summary | Accident description |
+The dataset used in this project was collected from publicly available datasets on Kaggle. We downloaded the data and performed our own data cleaning, preprocessing, and preparation.
 
-## Dataset Splits
+## Dataset Statistics
 
-The dataset is divided into three parts:
+The dataset contains **1,533,723 records**.
 
 | Split | Records | Percentage |
 |---|---:|---:|
-| Training | 3,687 | 70% |
-| Validation | 790 | 15% |
-| Testing | 791 | 15% |
-| Total | 5,268 | 100% |
+| Training | 1,226,943 | 80% |
+| Validation | 153,367 | 10% |
+| Testing | 153,413 | 10% |
+| Total | 1,533,723 | 100% |
+
+## Dataset Categories
+
+The dataset includes the following categories:
+
+- Accident
+- Airline
+- Airport
+- Aircraft
+- Operations
+- Weather
+- Aviation reports
+- Other aviation information
+
+## Dataset Structure
+
+The dataset contains four columns:
+
+| Column | Description |
+|---|---|
+| text | Aviation information converted into readable text |
+| source | Name of the original dataset |
+| record_type | Category of the aviation record |
+| event_id | Unique identifier for each record |
 
 ## Data Preparation
 
-- The original CSV file was loaded and inspected.
-- Empty values were identified as missing values.
-- Numerical columns were converted to numerical data types.
-- No duplicate records were found.
-- The dataset was randomly divided into three parts.
-- Random state 42 was used for reproducibility.
-- All three datasets were saved in Parquet format.
+The following steps were performed:
+
+1. Collected aviation data from multiple CSV files.
+2. Inspected and cleaned the datasets.
+3. Handled missing and empty values.
+4. Converted structured information into readable text.
+5. Combined related aviation report attributes using ITEM_ID.
+6. Removed duplicate records.
+7. Divided the dataset into training, validation, and testing sets.
+8. Saved the final datasets in Parquet format.
 
 ## File Format
 
-All three dataset files are stored in Parquet format.
+All dataset splits are stored in Parquet format.
+
+- train.parquet
+- validation.parquet
+- test.parquet
 
 ## Intended Use
 
-This dataset is prepared for future data analysis
-and machine learning experiments.
-
-The prediction target has not yet been selected.
+This dataset is prepared for aviation-related data analysis, machine learning experiments, and future aviation-focused AI and SLM development.
 
 ## Limitations
 
-Some columns contain missing values.
-The dataset requires further preprocessing depending
-on the machine learning task.
-
-## Source Information
-
-The original CSV file was supplied for this project.
-The original external source and dataset license
-have not yet been independently verified.
+- The dataset combines information from multiple sources.
+- Data quality and completeness may vary between sources.
+- Further preprocessing may be required depending on the intended application.
+- The dataset should not be treated as an authoritative source for real-time aviation operations or safety decisions.
