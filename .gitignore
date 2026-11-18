@@ -2,18 +2,33 @@
 *.csv
 *.parquet
 
+# Model checkpoints and weights
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+
 # Python cache
 __pycache__/
 *.py[cod]
 
+# Virtual environments
+.venv/
+venv/
+env/
+
 # Jupyter Notebook checkpoints
 .ipynb_checkpoints/
 
-# Environment files
+# Environment and secret files
 .env
 .env.*
+!.env.example
 
-# Temporary files
+# Temporary files and logs
 *.tmp
 *.log
+
+# OS files
 .DS_Store
+Thumbs.db
