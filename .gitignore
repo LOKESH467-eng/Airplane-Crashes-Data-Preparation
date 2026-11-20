@@ -32,3 +32,7 @@ env/
 # OS files
 .DS_Store
 Thumbs.db
+
+# Aviation SLM V3 RAG files
+ollama_mismatch_log.txt
+aviation_slm_model_v3/data/
